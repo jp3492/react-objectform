@@ -1,5 +1,5 @@
 {
-  "name": "react-objectform",
+  "name": "react-configurable-form",
   "version": "1.0.0",
   "description": "Create complex form with one React component and a configuration object.",
   "repository": {

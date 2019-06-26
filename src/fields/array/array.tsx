@@ -42,12 +42,13 @@ const ArrayField = (props: iProps) => {
     id,
     dependencies,
     placeholder,
-    path = id.split("."),
     inGrid,
     onChange,
     value,
     ...inputProps
   } = props
+
+  const path = id.split(".")
 
   const handleAdd = () => {
     onChange({ target: { value: [...value, addValue] } })
