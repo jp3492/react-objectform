@@ -1,10 +1,3 @@
-import { quantumReducer, initializeStores, dispatchToStore } from './quantum_reducer'
-import { quantumState, setQuantumValue } from './quantum_state'
-
-export {
-  quantumState,
-  setQuantumValue,
-  quantumReducer,
-  initializeStores,
-  dispatchToStore
-}
+export { addIdsToObject as createForm } from './utils/add-ids-to-object'
+export { setUploadParameters } from './utils/set-upload-parameter'
+export { Form } from './form'

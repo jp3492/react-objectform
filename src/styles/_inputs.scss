@@ -1,0 +1,22 @@
+@import './variables';
+
+input, textarea {
+  border: none;
+  border-bottom: 1px solid $color-divider;
+  width: 100%;
+  box-sizing: border-box;
+  &:focus {
+    background-color: transparent;
+    outline: none;
+    border-bottom: 1px solid $color-accent;
+  }
+}
+
+select {
+  padding: 5px;
+}
+
+textarea {
+  resize: vertical;
+  height: 40px;
+}

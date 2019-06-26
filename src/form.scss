@@ -1,0 +1,357 @@
+@import './styles/variables.scss';
+
+
+.ptf {
+  display: grid;
+  padding: $padding;
+  grid-row-gap: $gap-s;
+  grid-template-columns: 1fr max-content;
+  grid-auto-rows: max-content; 
+  > h1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2
+  }
+  > p {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3
+  }
+  > a {
+    width: 100px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3
+  }
+  > ul {
+    grid-column: 1 / 3;
+  }
+  h2 {
+    padding: $padding-s $padding;
+  }
+
+  h3 {
+    padding: $padding 0;
+  }
+
+  .ptf__fields {
+    display: grid;
+    grid-auto-columns: 1fr;
+    padding: $padding;
+    grid-column-gap: $gap-l;
+    grid-row-gap: $gap-s;
+    box-shadow: $shadow_1;
+    .ptf__field {
+      display: grid;
+      > label, input {
+        padding-top: $padding-s;
+      }
+      > label, p {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .ptf__field-description {
+        font-size: 14px;
+        color: $color-text-secondary;
+        margin-bottom: 3px; 
+      }  
+      .ptf__field-error {
+        font-size: 12px;
+        height: 12px;
+        color: $color-error;
+        overflow: visible;
+      }
+      input[data-invalid="true"] {
+        border-bottom: 1px solid $color-error;
+      }
+
+      .ptf__field__list__fields {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        grid-column-gap: $gap-l;
+        ul {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, 1fr);
+          grid-column-gap: $gap-l;
+        }
+        a {
+          place-self: center;
+        }
+        .ptf__field {
+          grid-template-rows: max-content 1fr max-content max-content; 
+        }
+      }
+    }
+
+
+    .ptf__field__list__values {
+      display: grid;
+      grid-row-gap: $gap;
+      padding: 10px;
+      .ptf__field__list__empty {
+        place-self: center;
+        color: $color-accent;
+        padding: 10px;
+      }
+      li {
+        display: grid;
+        grid-template-columns: 1fr max-content max-content;
+        i {
+          place-self: center;
+          padding: 0 10px;
+          cursor: pointer;
+        }
+        ul {
+          display: grid;
+          grid-auto-flow: column;
+          place-items: stretch;
+          box-shadow: $shadow_1;
+          li {
+            padding: 10px;
+            border-right: 1px solid $color-divider;
+            &:last-of-type {
+              border-right: none;
+            }
+          }
+        }
+      }
+      
+    }
+
+    .ptf__field__group {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      align-items: center;
+      > * {
+        grid-column: 1 / 3;
+      }
+      > h3 {
+        grid-column: 1 / 2;
+        cursor: pointer;
+      }
+      > i {
+        grid-column: 2 / 3;
+        cursor: pointer;
+        justify-self: center;
+      }
+    }
+
+    .ptf__field__date {
+      .react-datepicker-wrapper,
+      .react-datepicker__input-container {
+        width: 100%;
+      }
+      > div {
+        position: relative;
+        .SingleDatePicker {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          > div, 
+          > div > .SingleDatePickerInput, 
+          > div > .SingleDatePickerInput > .DateInput,
+          > div > .SingleDatePickerInput > .DateInput > input {
+
+            height: 100%;
+            width: 100%;
+          }
+          .DateInput {
+            opacity: 0 !important;
+          }
+          .SingleDatePickerInput {
+            border: none;
+            background-color: transparent;
+          }
+          .SingleDatePicker_picker  {
+            top: 25px !important;
+          }
+          .DateInput_fang_1 {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .ptf__field__file {
+      grid-template-columns: 1fr max-content;
+      > * {
+        grid-column: 1 / 3;
+      }
+      > label {
+        grid-column: 1 / 2;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      > i {
+        grid-column: 2 / 3;
+        cursor: pointer;
+      }
+      .pft__field__file__box {
+        display: grid;
+        place-items: center;
+        padding: 10px;
+        background-color: $color-background;
+        border-radius: 5px;
+      }
+      .ptf__field__file__uppy {
+        position: relative;
+        > div:nth-of-type(1) {
+          height: 100%; 
+          width: 100%;
+          z-index: 1;
+        }
+        > div:nth-of-type(2) {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          z-index: 1;
+          svg {
+            display: none;
+          }
+          .uppy-DragDrop-inner {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            .uppy-DragDrop-label {
+              cursor: pointer;
+              position: absolute;
+              height: 100%;
+              width: 100%;
+            }
+          }
+        }
+      }
+      > ul {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative; 
+        > li {  
+          position: relative;
+          height: 150px;
+          width: 100px;
+          margin-right: 10px;
+          display: grid;
+          .spinner-container {
+            place-self: center;
+          }
+          &.ptf__field__file-file {
+            i {
+              opacity: 0.3;
+              z-index: 1;
+              position: absolute;
+              top: 5px;
+              right: 5px;
+            }
+            .ptf__field__file-file-backdrop {
+              display: none;
+            }
+            &:hover {
+              i {
+                cursor: pointer;
+                opacity: 1;
+              }
+              .ptf__field__file-file-backdrop {
+                display: inline;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: $color-background;
+                opacity: 0.6;
+              }
+            }
+            
+          }
+        }
+      }
+    }
+
+    .pft__field__files {
+      .pft__field__files__box {
+        display: grid;
+        place-items: center;
+        padding: 10px;
+        background-color: $color-background;
+        border-radius: 5px;
+      }
+      .pft__field__files__list {
+        display: grid;
+        grid-template-columns: repeat(autp-fit, minmax(200px, 1fr))
+      }
+      > div {
+        position: relative;
+        > div:nth-of-type(1) {
+          height: 100%; 
+          width: 100%;
+          z-index: 1;
+        }
+        > div:nth-of-type(2) {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          z-index: 1;
+          svg {
+            display: none;
+          }
+          .uppy-DragDrop-inner {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            .uppy-DragDrop-label {
+              cursor: pointer;
+              position: absolute;
+              height: 100%;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .ptf__field__array-input {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    grid-column-gap: 10px;
+  }
+  .ptf__field__array-list {
+    display: flex;
+    flex-wrap: wrap;
+    > li {
+      padding: 10px 15px;
+      border-radius: 20px;
+      margin-right: 10px;
+      display: grid;
+      grid-auto-flow: column;
+      grid-column-gap: 10px;
+      place-items: center;
+      background-color: $color-background;
+      margin-top: 10px;
+      > i {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .ptf__button {
+    display: grid;
+    place-content: center;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    &.ptf__button--submit {
+      background-color: $color-accent;
+      color: white;
+    }
+    &[data-disabled="true"] {
+      pointer-events: none;
+      cursor: not-allowed;
+      background-color: $color-divider;
+    }
+  }
+  [data-expanded="false"] {
+    height: 0;
+    overflow: hidden;
+    padding: 1px;
+  }
+}

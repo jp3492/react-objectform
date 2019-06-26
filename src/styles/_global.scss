@@ -1,0 +1,49 @@
+@import './buttons';
+@import './inputs';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #___gatsby {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  padding: 0;
+  * {
+    font-family: Roboto;
+    > i {
+      font-family: 'Material Icons';
+    }
+  }
+}
+
+html {
+  background-color: $color-background;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: grid;
+}
+
+.Section__sectionFooterSecondaryContent___3cjOa {
+  display: none !important;
+}
+
+.ptf__fields {
+  background-color: white;
+}

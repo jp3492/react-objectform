@@ -1,10 +1,10 @@
 {
-  "name": "react-quantum-state",
+  "name": "react-objectform",
   "version": "1.0.0",
-  "description": "Global state management library for React. Single function use within components. All Redux functionality withs seperated stores.",
+  "description": "Create complex form with one React component and a configuration object.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jp3492/react-quantum-state"
+    "url": "https://github.com/jp3492/react-objectform"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,7 +15,13 @@
   "author": "Jan-Philipp Marks",
   "license": "ISC",
   "peerDependencies": {
-    "react": "^16.8.6"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "node-sass": "^4.12.0",
+    "react-datepicker": "^2.7.0",
+    "@uppy/aws-s3": "^1.1.0",
+    "@uppy/core": "^1.1.0",
+    "@uppy/react": "^1.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -26,7 +32,12 @@
     "@types/node": "^12.0.8",
     "@types/react": "^16.8.21",
     "react": "^16.8.6",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.2",
+    "@uppy/aws-s3": "^1.1.0",
+    "@uppy/core": "^1.1.0",
+    "@uppy/react": "^1.1.0",
+    "node-sass": "^4.12.0",
+    "react-datepicker": "^2.7.0"
   },
   "files": [
     "dist/*"
